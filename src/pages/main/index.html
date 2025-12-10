@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main/index.css">
+    <title>Nanly</title>
+</head>
+<body>
+<!--------------------------------------------------------------- TitleBar ---------------------------------------------------------------------->
+
+    <header class="titleBar">
+        <img class="logoTitleBar" src="../../images/icon.png" alt="logo">
+        <p>Nanly</p>
+    </header>
+    <div class="htTitleBar"></div> <!-- Divisão de sesão (hr) -->
+
+<main>
+<!--------------------------------------------------------------- Conteudo  --------------------------------------------------------------->
+    <div class="tutorial-box">
+        <div class="imagem-section">
+            <img src="../../images/art.png" alt="arte enviando email">
+        </div>
+        <div class="anexos-section" style="display: none; max-height: 600px; overflow-y: auto;">
+            <div class="enexos-title">
+                <h2 style="margin-right: auto;">Anexos:</h2>
+                <button id="remover-todos-anexos">Remover Todos</button>
+            </div>
+            <ul id="anexos-list"></ul>
+        </div>
+    </div>    
+    <div class="criar-box">
+        <h1>Criar Email</h1>
+        <div id="loading-screen">
+            <div class="loader"></div>
+            <p>Enviando E-mail...</p>
+        </div>
+        <form id="emailForm">
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="destinatario">Destinatário</label>
+                    <input type="email" name="destinatario" id="destinatario" class="inp-box" placeholder="Endereço de email" tabindex="1" required>
+                </div>
+                <div class="input-box">
+                    <label for="sobre">Sobre</label>
+                    <input type="text" name="sobre" id="sobre" class="inp-box" placeholder="Assunto do email" tabindex="2" required>
+                </div>
+                <div class="input-box">
+                    <label for="e-html">Email em HTML</label>
+                    <textarea name="e-html" id="e-html" class="html-box" placeholder="Digite o HTML" tabindex="3" required></textarea>
+                </div>
+                <div class="send-button">
+                    <button type="button" id="anexo" style="margin-right: 10px;">Anexar</button>
+                    <input type="file" id="anexoInput" multiple style="display: none;">
+                    <button id="enviar-button" type="submit">Enviar (Ctrl + Enter)</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+
+<!------------------------------------------------- Scripts ------------------------------------------------->
+<script src="enter.js"></script>
+<script src="mailer.js"></script>
+
+</body>
+</html>

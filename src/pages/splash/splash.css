@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/*--------------------------------------------------------------- Fonts --------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../../fonts/Poppins-Bold.ttf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(../../fonts/Poppins-Regular.ttf) format('opentype');
+}
+
+/*------------------------------------------------------------- Variaveis --------------------------------------------------------------------*/
+
+:root{
+    /* Cores */
+    --primary: #eff1f2;
+    --secodary: #9EB384;
+    --accent: #435334;
+    --text: #1c1c1c;
+    --text-secundary: #8f8f8f;
+    --hover: #9eac8e;
+    --background: #F7FBFC;
+
+    --fonte-padrao: 'Poppins-Regular', sans-serif;
+}
+
+/*--------------------------------------------------------------- Geral ----------------------------------------------------------------------*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    user-select: none; /* Impede a seleção de texto e imagens */
+    cursor: default; /* Mantém o cursor padrão em todo o app */
+}
+
+html, body{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+}
+
+/*--------------------------------------------------------------- TitleBar ----------------------------------------------------------------------*/
+
+.titleBar {
+    -webkit-app-select: none;
+    -webkit-app-region: drag;
+    background-color: var(--primary);
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+.titleBar p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--text);
+}
+
+.htTitleBar {
+    margin: 0px;
+    background-color: var(--text-secundary);
+    height: 1px;
+    width: 100%;
+}
+
+/*--------------------------------------------------------------- Main ----------------------------------------------------------------------*/
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 35.7px);
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+}
+
+p{
+    font-family: var(--fonte-padrao);
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(64, 64, 64);
+}

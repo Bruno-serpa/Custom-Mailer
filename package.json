@@ -1,0 +1,16 @@
+{
+  "name": "nanly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^27.0.2",
+    "nodemailer": "^6.9.14"
+  }
+}

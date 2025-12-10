@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+/*--------------------------------------------------------------- Fonts --------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(../../fonts/Poppins-Bold.ttf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url(../../fonts/Poppins-Regular.ttf) format('opentype');
+}
+
+/*------------------------------------------------------------- Variaveis --------------------------------------------------------------------*/
+
+:root{
+    /* Cores */
+    --primary: #eff1f2;
+    --secodary: #9EB384;
+    --accent: #435334;
+    --text: #1c1c1c;
+    --text-secundary: #8f8f8f;
+    --hover: #9eac8e;
+    --background: #F7FBFC;
+
+    --fonte-padrao: 'Poppins-Regular', sans-serif;
+}
+
+/*--------------------------------------------------------------- Geral ----------------------------------------------------------------------*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    user-select: none; /* Impede a seleção de texto e imagens */
+    cursor: default; /* Mantém o cursor padrão em todo o app */
+}
+
+html, body{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+/*--------------------------------------------------------------- TitleBar ----------------------------------------------------------------------*/
+
+.titleBar {
+    -webkit-app-select: none;
+    -webkit-app-region: drag;
+    background-color: var(--primary);
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+.titleBar p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: var(--text);
+}
+
+.htTitleBar {
+    margin: 0px;
+    background-color: var(--text-secundary);
+    height: 1px;
+    width: 100%;
+}
+
+.logoTitleBar{
+    width: 20px;
+    margin-right: 7px;
+}
+
+/*--------------------------------------------------------------- Main ----------------------------------------------------------------------*/
+
+main {
+    padding: 0px 10px;
+    display: flex;
+    background-color: snow;
+    min-height: 100vh;
+    margin-top: 36px;
+}
+
+.tutorial-box {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.enexos-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enexos-title button#remover-todos-anexos {
+    background-color: #ff3333;
+    color: #fff;
+    border: none;
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.enexos-title button#remover-todos-anexos:hover {
+    background-color: #ba2626;
+}
+  
+.imagem-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.anexos-section, .anexos-section * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.anexos-section{
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+}
+
+.tutorial-box img {
+    width: 100%;
+    height: auto;
+}
+
+.criar-box {
+    flex-grow: 1;
+    padding: 10px;
+    margin: 0px 30px;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.input-box label {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.inp-box, .html-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.html-box {
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+    vertical-align: top;
+    resize: none;
+}
+
+.send-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.send-button button {
+    background-color: #ff3333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.send-button button:hover {
+    background-color: #ba2626;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    display: none;
+}
+
+#loading-screen p{
+    color: white;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #ba2626;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+/* Listas de anexos */
+
+#anexos-list {
+    list-style: none;
+    padding: 0;
+    margin: 7px 15px;
+}
+
+/* Estilo para cada item da lista de anexos */
+#anexos-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7; /* Cor de fundo do item */
+    margin-bottom: 5px; /* Espaçamento entre os itens */
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #e6e6e6; /* Borda ao redor do item */
+    border-radius: 7px; /* Cantos arredondados */
+    width: 100%; /* Ocupa toda a largura da div */
+}
+
+/* Estilo para o botão de remoção do anexo */
+#anexos-list li .remover-anexo {
+    background-color: #ff3333; /* Cor de fundo vermelha */
+    color: #fff; /* Cor do texto branca */
+    width: 25px; /* Largura do botão */
+    height: 25px; /* Altura do botão */
+    border-radius: 50%; /* Borda circular para criar um botão redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none; /* Remover qualquer borda */
+    outline: none; /* Remover contorno ao focar */
+    transition: background-color 0.3s; /* Transição suave da cor de fundo */
+}
+
+/* Estilo ao passar o mouse sobre o botão */
+#anexos-list li .remover-anexo:hover {
+    background-color: #ba2626; /* Cor de fundo vermelha mais clara */
+}
+
+/* Estilo para o texto do nome do arquivo */
+#anexos-list li span {
+    flex-grow: 1; /* Ocupa o espaço restante */
+    overflow: hidden; /* Oculta o texto que transborda */
+    white-space: nowrap; /* Impede que o texto quebre em várias linhas */
+    text-overflow: ellipsis; /* Adiciona "..." ao texto que foi ocultado */
+}
+
+
+/* Tela de Carregamento */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 1200px) {
+    .tutorial-box {
+        display: none;
+    }
+  
+    .criar-box {
+        width: 100%;
+    }
+  }
